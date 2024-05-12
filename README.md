@@ -7,31 +7,49 @@ To write a python program to implement multivariate linear regression and predic
 ## Algorithm:
 ### Step1
 <br>
+Import the required libraries pandas and sklearn.linear_model.
 
 ### Step2
 <br>
+ Read the data from the CSV file "car.csv" into a DataFrame using pd.read_csv().
 
 ### Step3
 <br>
+Select the predictor variables ('Weight' and 'Volume') as x and the target variable ('CO2') as y.
 
 ### Step4
 <br>
+Initialize a linear regression model using linear_model.LinearRegression() and fit it to the data using regression.fit(x, y).
 
 ### Step5
 <br>
+Predict the CO2 emission for a given weight and volume (e.g., [[3300, 1300]]) using regression.predict() and print the coefficient, intercept, and predicted CO2 emission.
 
 ## Program:
 ```
+'''
+Developed By: Priyadharshan S
+Reference Number: 212223240127
+'''
+import pandas as pd
+from sklearn import linear_model
 
+data=pd.read_csv("car.csv")
 
+x=data[['Weight','Volume']]
+y=data['CO2']
+regression=linear_model.LinearRegression()
+regression.fit(x,y)
 
-
-
+print("Coefficient:",regression.coef_)
+print("Intercept:",regression.intercept_)
+predictCo2=regression.predict([[3300,1300]])
+print("CO2 required is",predictCo2)
 
 ```
 ## Output:
 
-### Insert your output
+![alt text](image.png)
 
 <br>
 
